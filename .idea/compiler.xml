@@ -10,14 +10,22 @@
         <module name="Player" />
         <module name="Asteroids" />
         <module name="Collision" />
-        <module name="Enemy" />
         <module name="CommonAsteroids" />
-        <module name="Map" />
         <module name="CommonBullet" />
-        <module name="Weapon" />
         <module name="Common" />
         <module name="Core" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="AsteroidsFX" target="9" />
+      <module name="Enemy" target="9" />
+      <module name="Map" target="9" />
+      <module name="Weapon" target="9" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Core" options="" />
+    </option>
   </component>
 </project>

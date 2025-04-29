@@ -1,62 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <artifactId>AsteroidsFX</artifactId>
     <groupId>dk.sdu.cbse</groupId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>asteroids.jpms</artifactId>
+    <version>1.0.1-SNAPSHOT</version>
   </parent>
-  <groupId>dk.sdu.cbse</groupId>
+  <groupId>dk.sdu.cbse.asteroids</groupId>
   <artifactId>Core</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
+
   <name>Core</name>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+  </properties>
+
+  <repositories>
+  </repositories>
+
   <dependencies>
     <dependency>
       <groupId>org.openjfx</groupId>
+      <artifactId>javafx-controls</artifactId>
+      <version>21.0.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.openjfx</groupId>
       <artifactId>javafx-graphics</artifactId>
-      <version>22.0.1</version>
+      <version>21.0.2</version>
     </dependency>
     <dependency>
-      <groupId>org.glassfish.jaxb</groupId>
-      <artifactId>jaxb-runtime</artifactId>
-      <version>4.0.5</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-context</artifactId>
-      <version>6.1.8</version>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-base</artifactId>
+      <version>21.0.2</version>
     </dependency>
     <dependency>
       <groupId>dk.sdu.cbse</groupId>
       <artifactId>Common</artifactId>
-      <version>1.0-SNAPSHOT</version>
-      <scope>compile</scope>
+      <version>1.0.1-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>dk.sdu.cbse</groupId>
       <artifactId>CommonBullet</artifactId>
-      <version>1.0-SNAPSHOT</version>
-      <scope>compile</scope>
+      <version>1.0.1-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-beans</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aop</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-expression</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jcl</artifactId>
     </dependency>
   </dependencies>
   <build>
     <plugins>
       <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.10.1</version>
-        <configuration>
-          <release>17</release> <!-- Or whatever Java version you target -->
-          <source>17</source>
-          <target>17</target>
-          <compilerArgs>
-            <arg>--module-path</arg>
-            <arg>${maven.compile.modulepath}</arg>
-          </compilerArgs>
-        </configuration>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>3.3.0</version>
+        <executions>
+          <execution>
+            <id>copy-dependencies</id>
+            <phase>package</phase>
+            <goals>
+              <goal>copy-dependencies</goal>
+            </goals>
+            <configuration>
+              <includeArtifactIds>javafx-controls,javafx-graphics,javafx-base,spring-context,spring-core,spring-beans,spring-aop,spring-expression,spring-jcl</includeArtifactIds>
+              <outputDirectory>../mods-mvn</outputDirectory>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
-
-
 </project>
