@@ -3,7 +3,7 @@ import dk.sdu.cbse.common.services.IGamePluginService;
 
 
 module Asteroid {
-    exports dk.sdu.cbse.asteroid;
+
     requires Common;
     requires CommonAsteroids;
 

@@ -3,34 +3,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>dk.sdu.cbse</groupId>
-    <artifactId>asteroids.jpms</artifactId>
+    <artifactId>asteroids.project</artifactId>
     <version>1.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>AsteroidsFX</name>
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot</artifactId>
-            <version>3.4.5</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-autoconfigure</artifactId>
-            <version>3.4.5</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <version>3.4.5</version>
-            <scope>compile</scope>
-        </dependency>
-    </dependencies>
-
-
-    <repositories>
-    </repositories>
 
     <modules>
         <module>Core</module>
@@ -44,6 +20,11 @@
         <module>Collision</module>
         <module>Enemy</module>
     </modules>
+
+    <repositories>
+    </repositories>
+
+
     <properties>
         <java>java</java>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -124,7 +105,7 @@
                     <fork>true</fork>
                 </configuration>
             </plugin>
-            <!-- execute the resulting project -->
+
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
@@ -143,14 +124,8 @@
                         <argument>--module-path=mods-mvn</argument>
                         <argument>--class-path=libs/*</argument>
 
-                        <!-- because spark.core is an automatic module and actually required,
-                        monitor.observer.zero would be resolved as well and does not need
-                        to be added explicitly;
-                        I still wanted to do it for clarity, but for some reason that results
-                        in "java.lang.module.FindException: Module monitor.observer.zero not found";
-                        strange... -->
-                        <!--                        <argument>-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=127.0.0.1:8000</argument>-->
-                        <argument>--module=Core/dk.sdu.cbse.Main</argument>
+                        <!-- running from core Main method-->
+                        <argument>--module=Core/dk.sdu.cbse.main.Main</argument>
                         <argument>--add-modules javafx.graphics</argument>
                     </arguments>
                 </configuration>
@@ -160,7 +135,7 @@
 
     <profiles>
         <profile>
-            <!-- parent project should delete 'mods-mvn' -->
+            <!-- deletes mods-mvn snapshots-->
             <id>parent-project</id>
             <activation>
                 <file>
@@ -187,7 +162,7 @@
             </build>
         </profile>
         <profile>
-            <!-- child projects should copy artifact into 'mods-mvn' -->
+            <!-- copying snapshot.jar into mods-mvn folder-->
             <id>child-project</id>
             <activation>
                 <file>

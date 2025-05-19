@@ -10,7 +10,7 @@ import java.util.Random;
 
 public class AsteroidPlugin implements IGamePluginService {
 
-    private static final int ASTEROID_COUNT = 5;
+    private static final int ASTEROID_COUNT = 8;
 
 
     @Override
