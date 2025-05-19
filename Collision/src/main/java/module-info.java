@@ -4,8 +4,6 @@ module Collision {
     requires Common;
     requires CommonAsteroids;
     requires CommonBullet;
-    requires Player;
-    requires Enemy;
     requires CommonShips;
 
     uses dk.sdu.cbse.common.asteroids.IAsteroidSplitter;

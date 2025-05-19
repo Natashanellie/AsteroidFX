@@ -7,8 +7,6 @@ import dk.sdu.cbse.common.data.Entity;
 import dk.sdu.cbse.common.data.GameData;
 import dk.sdu.cbse.common.data.World;
 import dk.sdu.cbse.common.services.IPostEntityProcessingService;
-import dk.sdu.cbse.enemy.Enemy;
-import dk.sdu.cbse.player.Player;
 import dk.sdu.cbse.common.ships.Ship;
 
 import java.util.ServiceLoader;
@@ -20,8 +18,7 @@ public class CollisionDetector implements IPostEntityProcessingService {
 
     public CollisionDetector() {
         this.asteroidSplitter = ServiceLoader.load(IAsteroidSplitter.class)
-                .findFirst()
-                .orElseThrow(() -> new RuntimeException("No AsteroidSplitter implementation found"));
+                .findFirst().orElse(null);
     }
 
     @Override
@@ -56,7 +53,7 @@ public class CollisionDetector implements IPostEntityProcessingService {
                         }
 
                     }
-                    if (entity1 instanceof Player && entity2 instanceof Enemy){
+                    if (entity1 instanceof Ship && entity2 instanceof Ship){
                         world.removeEntity(entity1);
                         world.removeEntity(entity2);
                         continue;
