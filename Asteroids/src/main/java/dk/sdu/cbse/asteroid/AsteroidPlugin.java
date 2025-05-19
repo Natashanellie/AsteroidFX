@@ -10,10 +10,15 @@ import java.util.Random;
 
 public class AsteroidPlugin implements IGamePluginService {
 
+    private static final int ASTEROID_COUNT = 5;
+
+
     @Override
     public void start(GameData gameData, World world) {
-        Entity asteroid = createAsteroid(gameData);
-        world.addEntity(asteroid);
+        for (int i = 0; i < ASTEROID_COUNT; i++){
+            Entity asteroid = createAsteroid(gameData);
+            world.addEntity(asteroid);
+        }
     }
 
     @Override
@@ -29,8 +34,8 @@ public class AsteroidPlugin implements IGamePluginService {
         Random rnd = new Random();
         int size = rnd.nextInt(10) + 5;
         asteroid.setPolygonCoordinates(size, -size, -size, -size, -size, size, size, size);
-        asteroid.setX(0);
-        asteroid.setY(0);
+        asteroid.setX(rnd.nextInt(gameData.getDisplayWidth())); // Random X
+        asteroid.setY(rnd.nextInt(gameData.getDisplayHeight())); // Random Y
         asteroid.setRadius(size);
         asteroid.setRotation(rnd.nextInt(90));
         return asteroid;

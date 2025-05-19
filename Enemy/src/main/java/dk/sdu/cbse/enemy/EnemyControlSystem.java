@@ -22,7 +22,7 @@ public class EnemyControlSystem implements IEntityProcessingService {
 
 
         for (Entity enemy : world.getEntities(Enemy.class)){
-            System.out.println("Processing Enemy at X: " + enemy.getX() + ", Y: " + enemy.getY());
+            //System.out.println("Processing Enemy at X: " + enemy.getX() + ", Y: " + enemy.getY());
 
             if (random.nextFloat()<0.02){
                 enemy.setRotation(random.nextInt(360));

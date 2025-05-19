@@ -1,7 +1,11 @@
 package dk.sdu.cbse.enemy;
 
-import dk.sdu.cbse.common.data.Entity;
+import dk.sdu.cbse.common.ships.Ship;
 
-public class Enemy extends Entity {
+public class Enemy extends Ship {
+
+    public Enemy() {
+        setHealth(3);
+    }
 
 }
