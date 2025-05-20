@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="dk.sdu.cbse.player.PlayerControlSystemTest" time="0.12" tests="2" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="dk.sdu.cbse.player.PlayerControlSystemTest" time="0.116" tests="2" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="23"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -12,7 +12,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="DK"/>
     <property name="sun.boot.library.path" value="/Users/natashanellieorangeandersen/Library/Java/JavaVirtualMachines/openjdk-23.0.2/Contents/Home/lib"/>
-    <property name="sun.java.command" value="org.apache.maven.surefire.booter.ForkedBooter /Users/natashanellieorangeandersen/Documents/4_Semester/Komponentbaserede_systemer/Portfolio/AsteroidsProject/AsteroidsFX/Player/target/surefire 2025-05-19T17-11-39_632-jvmRun1 surefire-20250519171151818_1tmp surefire_0-20250519171151818_2tmp"/>
+    <property name="sun.java.command" value="org.apache.maven.surefire.booter.ForkedBooter /Users/natashanellieorangeandersen/Documents/4_Semester/Komponentbaserede_systemer/Portfolio/AsteroidsProject/AsteroidsFX/Player/target/surefire 2025-05-20T16-19-12_879-jvmRun1 surefire-20250520161924618_1tmp surefire_0-20250520161924618_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/natashanellieorangeandersen/Documents/4_Semester/Komponentbaserede_systemer/Portfolio/AsteroidsProject/AsteroidsFX/Player/target/test-classes:/Users/natashanellieorangeandersen/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.2/junit-jupiter-5.10.2.jar:/Users/natashanellieorangeandersen/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.2/junit-jupiter-api-5.10.2.jar:/Users/natashanellieorangeandersen/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/natashanellieorangeandersen/.m2/repository/org/junit/platform/junit-platform-commons/1.10.2/junit-platform-commons-1.10.2.jar:/Users/natashanellieorangeandersen/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/natashanellieorangeandersen/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.2/junit-jupiter-params-5.10.2.jar:/Users/natashanellieorangeandersen/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.2/junit-jupiter-engine-5.10.2.jar:/Users/natashanellieorangeandersen/.m2/repository/org/junit/platform/junit-platform-engine/1.10.2/junit-platform-engine-1.10.2.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -56,6 +56,6 @@
     <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
     <property name="java.class.version" value="67.0"/>
   </properties>
-  <testcase name="turnPlayerLeft" classname="dk.sdu.cbse.player.PlayerControlSystemTest" time="0.067"/>
-  <testcase name="turnPlayerRight" classname="dk.sdu.cbse.player.PlayerControlSystemTest" time="0.005"/>
+  <testcase name="turnPlayerLeft" classname="dk.sdu.cbse.player.PlayerControlSystemTest" time="0.063"/>
+  <testcase name="turnPlayerRight" classname="dk.sdu.cbse.player.PlayerControlSystemTest" time="0.003"/>
 </testsuite>
