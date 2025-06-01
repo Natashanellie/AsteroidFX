@@ -19,7 +19,20 @@
         <module>Asteroids</module>
         <module>Collision</module>
         <module>Enemy</module>
+        <module>ScoreMicroService</module>
     </modules>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+            <version>3.4.5</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+        </dependency>
+    </dependencies>
 
     <repositories>
     </repositories>

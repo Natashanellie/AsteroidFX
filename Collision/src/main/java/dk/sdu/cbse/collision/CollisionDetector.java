@@ -1,5 +1,4 @@
 package dk.sdu.cbse.collision;
-
 import dk.sdu.cbse.common.asteroids.Asteroid;
 import dk.sdu.cbse.common.asteroids.IAsteroidSplitter;
 import dk.sdu.cbse.common.bullet.Bullet;
@@ -15,6 +14,8 @@ public class CollisionDetector implements IPostEntityProcessingService {
 
 
     private final IAsteroidSplitter asteroidSplitter;
+
+
 
     public CollisionDetector() {
         this.asteroidSplitter = ServiceLoader.load(IAsteroidSplitter.class)
@@ -41,6 +42,8 @@ public class CollisionDetector implements IPostEntityProcessingService {
 
                     if (entity1 instanceof Ship && entity2 instanceof Asteroid ){
                         world.removeEntity(entity1);
+
+
                     }
 
                     if (entity1 instanceof Ship && entity2 instanceof Bullet){
